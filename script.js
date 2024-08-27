@@ -1,12 +1,15 @@
 function getComputerChoice (max) {
     
-    if (Math.floor(Math.random()* max)===0)
+    if (Math.floor(Math.random()* max)===0) {
         console.log("Computer selects rock.")
-    else if (Math.floor(Math.random()* max)===1)
+        return 0;
+    } else if (Math.floor(Math.random()* max)===1) {
         console.log("Computer selects paper.")
-    else if (Math.floor(Math.random()* max)===2)
+        return 1;
+    } else if (Math.floor(Math.random()* max)===2) {
         console.log("Computer selects scissors.")
-    return Math.floor
+        return 2;
+    }
     }
 
 console.log(getComputerChoice(3))
@@ -28,7 +31,8 @@ function getHumanChoice () {
         default:
             console.log("I have never heard of that one.");
 }
-console.log(lowerHumanChoice)
+console.log(lowerHumanChoice);
+return humanChoice;
 }
 
 let humanScore=(0);
@@ -37,17 +41,25 @@ let computerScore=(0);
 
 
 function playRound (humanChoice, computerChoice) {
-   if (humanChoice==="rock" && computerChoice===0) {
+    if (humanChoice==="rock" && computerChoice===0) {
     console.log("It's a tie, try again!")
    } else if (humanChoice==="paper" && computerChoice===0) {
-    console.log("Computer picks rock, you lose this time.")
+    console.log("Computer picks rock, you win!")
+   } else if (humanChoice==="scissors" && computerChoice===0) {
+    console.log("Computer picks rock, you lose.")
+   } else if (humanChoice==="rock" && computerChoice===1) {
+    console.log("Computer chose paper, you lose.")
+   } else if (humanChoice==="rock" && computerChoice===2) {
+    console.log("Computer picks scissors, you win!")
    }
+   return humanChoice + computerChoice;
+
 }
 
-const humanChoice = getHumanChoice ("");
-const computerChoice = getComputerChoice(Number);
+const humanSelection = getHumanChoice ("");
+const computerSelection = getComputerChoice();
 
-playRound (humanChoice, computerChoice);
+playRound (humanSelection, computerSelection);
 
 
 
