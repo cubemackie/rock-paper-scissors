@@ -1,56 +1,53 @@
+function getComputerChoice (max) {
+    
+    if (Math.floor(Math.random()* max)===0)
+        console.log("Computer selects rock.")
+    else if (Math.floor(Math.random()* max)===1)
+        console.log("Computer selects paper.")
+    else if (Math.floor(Math.random()* max)===2)
+        console.log("Computer selects scissors.")
+    return Math.floor
+    }
 
+console.log(getComputerChoice(3))
 
-let rock=0
-let paper=1
-let scissors=2
+function getHumanChoice () {
+    let text = "";
+    let humanChoice=prompt("Choose between 'Rock', 'Paper', or 'Scissors'");
+    let lowerHumanChoice=humanChoice.toLowerCase();
+    switch (lowerHumanChoice) {
+        case "rock":
+            console.log("The rock? Excellent choice.");
+            break;
+        case "paper":
+            console.log("Paper? Good luck.");
+            break;
+        case "scissors":
+            console.log("Scissors? Snippy snip.");
+            break;
+        default:
+            console.log("I have never heard of that one.");
+}
+console.log(lowerHumanChoice)
+}
 
 let humanScore=(0);
 let computerScore=(0);
 
-function getComputerChoice (max) {
-    return Math.floor(Math.random()* max);
-   
-}
-
-
-function getHumanChoice () {
-    let text;
-    let choice=prompt("Choose between 'Rock', 'Paper', or 'Scissors'");
-    let madeChoice=choice.toLowerCase();
-    switch (madeChoice) {
-        case "rock":
-            text="The rock? Excellent choice.";
-            break;
-        case "paper":
-            text="Paper? Good luck.";
-            break;
-        case "scissors":
-            text="Scissors? Snippy snip.";
-            break;
-        default:
-            text = "I have never heard of that one.";
-}
-
-console.log(choice)
-return madeChoice
-}
-
-console.log(getComputerChoice(3))
-
 
 
 function playRound (humanChoice, computerChoice) {
-   if (madeChoice==="rock" && Math.floor===0) {
+   if (humanChoice==="rock" && computerChoice===0) {
     console.log("It's a tie, try again!")
-   } else if (madeChoice==="paper" && Math.floor===0) {
+   } else if (humanChoice==="paper" && computerChoice===0) {
     console.log("Computer picks rock, you lose this time.")
    }
 }
 
-const humanSelection = getHumanChoice ();
-const computerSelection = getComputerChoice();
+const humanChoice = getHumanChoice ("");
+const computerChoice = getComputerChoice(Number);
 
-playRound (humanSelection, computerSelection);
+playRound (humanChoice, computerChoice);
 
 
 
