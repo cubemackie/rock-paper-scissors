@@ -2,17 +2,17 @@ function getComputerChoice (max) {
     
     if (Math.floor(Math.random()* max)===0) {
         console.log("Computer selects rock.")
-        return 0;
+        return "rock";
     } else if (Math.floor(Math.random()* max)===1) {
         console.log("Computer selects paper.")
-        return 1;
+        return "paper";
     } else if (Math.floor(Math.random()* max)===2) {
         console.log("Computer selects scissors.")
-        return 2;
+        return "scissors";
     }
     }
 
-console.log(getComputerChoice(3))
+
 
 function getHumanChoice () {
     let text = "";
@@ -32,35 +32,38 @@ function getHumanChoice () {
             console.log("I have never heard of that one.");
 }
 console.log(lowerHumanChoice);
-return humanChoice;
+return lowerHumanChoice;
 }
 
 let humanScore=(0);
 let computerScore=(0);
+const computerSelection = getComputerChoice("")
+const humanSelection = getHumanChoice ("")
 
 
-
-function playRound (humanChoice, computerChoice) {
-    if (humanChoice==="rock" && computerChoice===0) {
+function playRound (humanSelection, computerSelection) {
+    if (humanSelection==="rock" && computerSelection==="rock") {
     console.log("It's a tie, try again!")
-   } else if (humanChoice==="paper" && computerChoice===0) {
+   } else if (humanSelection==="paper" && computerSelection==="rock") {
     console.log("Computer picks rock, you win!")
-   } else if (humanChoice==="scissors" && computerChoice===0) {
+   } else if (humanSelection==="scissors" && computerSelection==="rock") {
     console.log("Computer picks rock, you lose.")
-   } else if (humanChoice==="rock" && computerChoice===1) {
+   } else if (humanSelection==="rock" && computerSelection==="paper") {
     console.log("Computer chose paper, you lose.")
-   } else if (humanChoice==="rock" && computerChoice===2) {
+   } else if (humanSelection==="rock" && computerSelection==="scissors") {
     console.log("Computer picks scissors, you win!")
-   }
-   return humanChoice + computerChoice;
+   } else if (humanSelection==="scissors" && computerSelection==="scissors") {
+    console.log("You're both scissors, it's a tie.")
+    } else if (humanSelection==="scissors" && computerSelection==="paper") {
+    console.log("You chose scissors, you win!")
+    } else if (humanSelection==="paper" && computerSelection==="scissors") {
+    console.log("Computer chose scissors, you lose!")
+    } else if (humanSelection==="paper" && computerSelection==="paper") {
+    console.log("Both paper, it's a tie")
 
 }
-
-const humanSelection = getHumanChoice ("");
-const computerSelection = getComputerChoice();
+}
 
 playRound (humanSelection, computerSelection);
-
-
 
 
